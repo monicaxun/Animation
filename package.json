@@ -1,0 +1,30 @@
+{
+  "name": "animation",
+  "version": "1.0.0",
+  "description": "animation test, wechat share sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monicaxun/Animation.git"
+  },
+  "keywords": [
+    "animation",
+    "wechat-share"
+  ],
+  "author": "Monica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monicaxun/Animation/issues"
+  },
+  "homepage": "https://github.com/monicaxun/Animation#readme",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "precss": "^1.4.0"
+  }
+}
