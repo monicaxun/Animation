@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
   <title>Test Animation</title>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/didi.css">
 </head>
 <body>
-  <div>
+<div class="content">
+  <div class="page page-loading" style="display: none;">
     <img src="../images/mascot.png" alt="">
 
     <p>Loading...</p>
   </div>
 
-  <div class="page page1">
+  <div class="page page1" style="display: none">
     <div class="con">
-      <p>万水千山中，我们相遇</p>
-      <p>据说这是万里挑"医"的缘分</p>
-      <p>2016年马上就要过去了</p>
-      <p>马上就来检验我们之间的缘分吧！</p>
+      <div class="con_txt">
+        <p>万水千山中，我们相遇</p>
+        <p>据说这是万里挑"医"的缘分</p>
+        <p>2016年马上就要过去了</p>
+        <p>马上就来检验我们之间的缘分吧！</p>
+      </div>
       <input type="text">
     </div>
     <div class="pageup">
@@ -28,7 +32,31 @@
 
 
   <div class="page page2">
+    <div class="con">
+      <div class="con_txt">
+        <p>点击进行分享吧！</p>
+      </div>
 
+      <button class="share_btn">分享给朋友</button>
+    </div>
+    <div class="pageup">
+      <img src="../images/icon_up.png" alt="">
+    </div>
   </div>
+
+  <div id="share"></div>
+  <div class="audio">
+    <audio src=""></audio>
+  </div>
+</div>
 </body>
+
+<script type="text/javascript">
+  !function(){
+    var share = document.getElementsByClassName("share_btn")[0];
+    share.addEventListener("click", function () {
+      document.getElementById("share").style.display = "block";
+    })
+  }();
+</script>
 </html>

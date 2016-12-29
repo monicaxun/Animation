@@ -1,0 +1,107 @@
+@import "animation";
+
+.content {
+  width: 100%;
+  height: 100%;
+
+  .page1 {
+    background: url("../images/page-1.jpg") center/cover no-repeat;
+  }
+
+  .page2 {
+    background: url("../images/page-2.jpg") center/cover no-repeat;
+
+    button {
+      margin: 10% 0 0;
+      padding: 5px 10px;
+      font-size: 28px;
+      color: #fff;
+      width: 30%;
+      height: 50px;
+      background: gold;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+
+  .page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+
+    .pageup {
+      position: absolute;
+      left: 45%;
+      bottom: 8%;
+      animation: turn_next 1s linear infinite;
+      display: inline-block;
+      width: 10%;
+    }
+
+    .con {
+      font-size: 14px;
+      color: #fff;
+      overflow: hidden;
+
+      .con_txt {
+        margin-top: 30%;
+        margin-left: 3%;
+        width: 80%;
+        p {
+          text-align: left;
+        }
+      }
+
+      input[type="text"] {
+        margin-top: 5%;
+        background-color: #fff;
+        width: 75%;
+        height: 15%;
+        color: #000;
+        border: #a0763a 5px solid;
+        display: inline-block;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .page-loading {
+    img {
+      margin-top: 40%;
+      width: 50%;
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 5%;
+    }
+  }
+
+  #share {
+    width: 100%;
+    height: 100%;
+    background: url("../images/share.png") center/cover no-repeat;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .audio {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 80px;
+    height: 80px;
+    background: url("../images/audio_bg.png") center -82px no-repeat;
+    //transform: rotate(0deg);
+    //transition: transform 1s linear;
+    animation: circle 6s linear infinite;
+    &.invalid {
+      background-position: center 0px;
+      animation: none;
+    }
+  }
+}
+

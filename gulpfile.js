@@ -16,14 +16,37 @@ gulp.task("copy", function() {
 });
 
 gulp.task("css", function(e) {
-    gulp.src("./src/css/**/*.scss")
-        .pipe(postcss([]))
+    var autoprefixer = require("autoprefixer");
+    var precss = require("precss");
+    var cssgrace = require("cssgrace");
+
+    var processsors = [
+        autoprefixer({
+            browsers: [
+                'last 5 versions',
+                'ie >= 8',
+                'ie_mob >= 10',
+                'ff >= 30',
+                'chrome >= 34',
+                'safari >= 6',
+                'opera >= 12.1',
+                'ios >= 6',
+                'android >= 4.4',
+                'bb >= 10',
+            ] }),
+        cssgrace,
+        precss
+    ];
+
+    gulp.src("./src/css/**/*.*")
+        .pipe(scss({outputStyle : "expanded"}))
+        .pipe(postcss(processsors))
         .pipe(gulp.dest("./build/css"));
 });
 
 gulp.task("watch", function(){
-    gulp.watch("./src/**/*.*", ["copy"]);
-    gulp.watch("./src/css/**/*.scss", ["css"]);
+    gulp.watch(["./src/js/**/*.*", "./src/images/**/*.*", "./src/view/**/*.*"], ["copy"]);
+    gulp.watch("src/css/**/*.*", ["css"]);
 });
 
 gulp.task("default", ["copy", "css", "watch"]);
